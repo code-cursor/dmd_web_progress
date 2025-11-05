@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Executive Members</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+  <section class="team-section container">
+    <div class="row g-4">
+
+      <script>
+        const members = [
+          {name: "Mary Brown", role: "Creative Leader", img: "./src/images/1_abu_raihan.jpg", desc: "Innovative thinker and creative strategist."},
+          {name: "Bob Greenfield", role: "Programming Guru", img: "./src/images/2_feroze_ahammad.jpg", desc: "Loves clean code and solving hard problems."},
+          {name: "Ann Richmond", role: "Sales Manager", img: "./src/images/3_mohammad_parvez.jpg", desc: "Turning prospects into happy customers."},
+          {name: "John Carter", role: "UX Designer", img: "./src/images/4_aivy_akter.jpg", desc: "Designing delightful digital experiences."},
+          {name: "Lisa Wong", role: "Marketing Expert", img: "./src/images/5_jasim_uddin_khan.jpg", desc: "Crafting creative brand stories."},
+          {name: "David Lee", role: "Data Scientist", img: "./src/images/6_arifur_rahaman.jpg", desc: "Turning data into actionable insights."},
+          {name: "Sophia Turner", role: "HR Coordinator", img: "./src/images/7_apel_mahmud.jpg", desc: "Building positive workplace culture."},
+          {name: "Michael Clark", role: "Backend Developer", img: "./src/images/8_rekhabul Alam.jpg", desc: "Architect of scalable systems."},
+          {name: "Ella Johnson", role: "Product Manager", img: "./src/images/9_ayub_khan.jpg", desc: "Bridging business goals with user needs."}
+        ];
+      </script>
+
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      const row = $(".row");
+      members.forEach((m, i) => {
+        row.append(`
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="team-card" style="animation-delay:${i * 0.15}s">
+              <div class="member-img">
+                <img src="${m.img}" alt="${m.name}">
+              </div>
+              <h5 class="member-name">${m.name}</h5>
+              <p class="member-role">${m.role}</p>
+              <p class="member-desc">${m.desc}</p>
+            </div>
+          </div>
+        `);
+      });
+
+      // Scroll reveal effect
+      $(window).on("scroll", function() {
+        $(".team-card").each(function() {
+          const elementPos = $(this).offset().top;
+          const topOfWindow = $(window).scrollTop();
+          const windowHeight = $(window).height();
+          if (elementPos < topOfWindow + windowHeight - 80) {
+            $(this).addClass("visible");
+          }
+        });
+      }).trigger("scroll");
+    });
+  </script>
+
+</body>
+</html>

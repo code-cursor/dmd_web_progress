@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Executive Committee</title>
+
+  <link rel="stylesheet" href="./css/executive_committee.css">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+   <!-- Dynamic Header -->
+  <div id="header-container"></div>
+
+  <section class="team-section container">
+    <!-- Page Title -->
+    <div class="section-title mb-5">
+      <h2 class="title-main">Executive Committee</h2>
+      <div class="title-underline"></div>
+      <p class="title-subtext">Dedicated to leading the DMD Disease Foundation with compassion, vision, and commitment to improving lives.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <script>
+        const members = [
+          {
+            name: "Al Razi",
+            role: "President",
+            img: "./src/images/1_abu_raihan.jpg",
+            desc: "Providing visionary leadership and guiding the foundation’s mission to improve the lives of individuals affected by DMD across Bangladesh."
+          },
+          {
+            name: "Md. Feroze Ahammad",
+            role: "Vice-President",
+            img: "./src/images/2_feroze_ahammad.jpg",
+            desc: "Supporting the President in strategic decision-making and fostering collaboration to strengthen community outreach and care initiatives."
+          },
+          {
+            name: "Mohammad Parvez",
+            role: "General Secretary",
+            img: "./src/images/3_mohammad_parvez.jpg",
+            desc: "Overseeing organizational activities, documentation, and communication to ensure smooth operation of all foundation programs and events."
+          },
+          {
+            name: "Alvy Akter",
+            role: "Joint Secretary",
+            img: "./src/images/4_aivy_akter.jpg",
+            desc: "Assisting in administrative coordination and promoting awareness campaigns for patients and families impacted by Duchenne Muscular Dystrophy."
+          },
+          {
+            name: "Md. Jasim Uddin Khan",
+            role: "Treasurer",
+            img: "./src/images/5_jasim_uddin_khan.jpg",
+            desc: "Managing financial resources responsibly to support the foundation’s ongoing medical, educational, and community assistance projects."
+          },
+          {
+            name: "Md. Arifur Rahaman",
+            role: "Executive Member",
+            img: "./src/images/6_arifur_rahaman.jpg",
+            desc: "Contributing to strategic planning and policy development to advance care and support for individuals living with DMD."
+          },
+          {
+            name: "Apen Mahmud",
+            role: "Executive Member",
+            img: "./src/images/7_apel_mahmud.jpg",
+            desc: "Actively engaging in outreach programs and representing the foundation’s values through advocacy and community involvement."
+          },
+          {
+            name: "Md. Rakhabul Alam",
+            role: "Executive Member",
+            img: "./src/images/8_rekhabul Alam.jpg",
+            desc: "Providing insight and leadership to strengthen partnerships and expand the foundation’s impact within the healthcare community."
+          },
+          {
+            name: "Md. Ayub Khan",
+            role: "Executive Member",
+            img: "./src/images/9_ayub_khan.jpg",
+            desc: "Collaborating with the committee to implement initiatives that raise awareness and improve quality of life for DMD patients and their families."
+          }
+        ];
+
+      </script>
+
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      const row = $(".row");
+      members.forEach((m, i) => {
+        row.append(`
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="team-card" style="animation-delay:${i * 0.15}s">
+              <div class="member-img">
+                <img src="${m.img}" alt="${m.name}">
+              </div>
+              <h5 class="member-name">${m.name}</h5>
+              <p class="member-role">${m.role}</p>
+              <p class="member-desc">${m.desc}</p>
+            </div>
+          </div>
+        `);
+      });
+
+      // Scroll reveal effect
+      $(window).on("scroll", function() {
+        $(".team-card").each(function() {
+          const elementPos = $(this).offset().top;
+          const topOfWindow = $(window).scrollTop();
+          const windowHeight = $(window).height();
+          if (elementPos < topOfWindow + windowHeight - 80) {
+            $(this).addClass("visible");
+          }
+        });
+      }).trigger("scroll");
+    });
+  </script>
+
+  <!-- link js for header & footer -->
+  <script src="./js/script.js"></script> 
+
+  <!-- Dynamic Footer -->
+  <div id="footer-container"></div>
+
+
+</body>
+</html>

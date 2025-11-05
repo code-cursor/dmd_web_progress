@@ -1,0 +1,33 @@
+$(document).ready(function() {
+
+  // Smooth Scroll on Footer Links
+  $('.footer-link').on('click', function(e) {
+    e.preventDefault();
+    const target = $(this).attr('href');
+    
+    // Smooth scroll to the target element
+    $('html, body').animate({
+      scrollTop: $(target).offset().top
+    }, 1000);
+  });
+
+  // Social Media Icon Animation: Hover Effect
+  $('.social-icon').hover(
+    function() {
+      $(this).animate({ 
+        opacity: 0.7, 
+        transform: 'scale(1.3)' 
+      }, 300);
+    },
+    function() {
+      $(this).animate({ 
+        opacity: 1, 
+        transform: 'scale(1)' 
+      }, 300);
+    }
+  );
+
+  // Fade In Footer on Page Load
+  $('footer').css('opacity', 0); // Start with hidden footer
+  $('footer').animate({ opacity: 1 }, 1000); // Fade it in when page loads
+});

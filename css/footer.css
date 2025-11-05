@@ -1,0 +1,94 @@
+:root {
+  /* Color palette */
+  --color-primary: #009966;       
+  --color-primary-2: #00B27D;
+  --color-bg-1: #f4f4f4;
+  --color-bg-2: #bb2d3b;
+
+  /* Text */
+  --text-color-primary: #f4f4f4;
+  --text-color-default: #009966;
+
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  /* font size */
+  --font-size-sm: 0.8rem;
+}
+
+/* ============================================= 
+            Custom Design CSS 
+================================================ */
+
+/* Footer Background Color */
+.footer {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-primary), var(--color-primary-2));
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Fade-in effect when page loads */
+}
+
+/* Footer Link Hover Effect */
+.footer-link:hover {
+  color: var(--text-color-default) !important;
+  text-decoration: none;
+  font-weight: 600;
+  transform: scale(1.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+  background-color: white;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--text-color-primary);
+  padding: 2px 5px;
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* Fade-in effect when page loads */
+}
+
+/* Social Media Icon Hover Effect */
+.social-icon{
+  font-size: 25px;
+}
+
+.social-icon:hover {
+  color: var(--color-primary);
+  font-size: 20px;
+  transform: scale(1.5);
+  transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+/* Footer Text Styling */
+.footer p {
+  font-size: 14px;
+  color: var(--text-color-primary);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 576px) {
+  .footer .col-12 {
+    text-align: center;
+  }
+
+  .footer a {
+    margin-bottom: 10px;
+  }
+
+  .footer .fa {
+    font-size: 20px;
+  }
+}
+
+/* Only show on 320px–991px width */
+@media (max-width: 991px) and (min-width: 320px) {
+  .bottom-text {
+    padding-bottom: 50px;
+  }
+}
