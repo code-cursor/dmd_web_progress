@@ -1,215 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Health Care Team</title>
-  <link rel="shortcut icon" href="./src/images/DMD_care_bd_Logo.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Care for DMD Patients</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/health_care_team.css>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e63946;
+    --dark-blue: #1d3557;
+    --light-blue: #457b9d;
+    --cream: #f1faee;
+    --orange: #ffb703;
+    --white: #fff;
+  }
 
-  <style>
-    /* ================= COLOR THEME ================= */
-    :root {
-      --color-primary: #009966;       
-      --color-primary-2: #00B27D;
-      --color-bg-1: #f4f4f4;
-      --color-bg-2: #bb2d3b;
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1faee 100%);
+    color: var(--dark-blue);
+    overflow-x: hidden;
+  }
 
-      --text-color-primary: #f4f4f4;
-      --text-color-default: #009966;
+  /* Hero Banner */
+  .banner {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(29, 53, 87, 0.6), rgba(29, 53, 87, 0.6)), 
+      url('https://images.unsplash.com/photo-1588776814546-3c4e7b12f03a?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    text-align: center;
+    color: var(--white);
+  }
 
-      --radius-sm: 6px;
-      --radius-md: 10px;
+  .banner h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    animation: fadeInDown 1s ease forwards;
+  }
 
-      --font-size-sm: 0.8rem;
+  .banner p {
+    max-width: 600px;
+    margin: 1rem auto 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-40px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+
+  /* Section Titles */
+  h2.section-title {
+    text-align: center;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  h2.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--orange);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+  }
+
+  /* Cards */
+  .resource-card {
+    border: none;
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+
+  .resource-card .icon {
+    font-size: 2rem;
+    color: var(--light-blue);
+    margin-bottom: 1rem;
+  }
+
+  .resource-card h5 {
+    color: var(--dark-blue);
+    font-weight: 600;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(135deg, var(--red), var(--orange));
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, var(--orange), var(--red));
+    transform: translateY(-2px);
+  }
+
+  /* Age / Stage */
+  .age-stage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .age-card {
+    flex: 1 1 260px;
+    background: linear-gradient(135deg, var(--light-blue), var(--dark-blue));
+    color: var(--white);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .age-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .age-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .age-card a:hover {
+    text-decoration: underline;
+  }
+
+  /* Smooth fade-up animation */
+  .fadeup {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fadeup.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .banner h1 {
+      font-size: 2.2rem;
     }
-
-    * {
-      font-family: 'Poppins', sans-serif;
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(-45deg, #e6fff3, #f4f4f4, #d9fcef, #c8ffe0);
-      background-size: 400% 400%;
-      animation: gradientFlow 12s ease infinite;
-      color: var(--color-primary);
-    }
-
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Banner */
     .banner {
-      position: relative;
-      text-align: left;
-      color: var(--text-color-primary);
+      height: 60vh;
     }
-
-    .banner img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .banner-text {
-      position: absolute;
-      top: 50%;
-      left: 5%;
-      transform: translateY(-50%);
-      background: rgba(0, 153, 102, 0.7);
-      padding: 1.5rem 2rem;
-      border-radius: var(--radius-md);
-      max-width: 400px;
-      animation: slideInLeft 1.2s ease forwards;
-    }
-
-    @keyframes slideInLeft {
-      0% { opacity: 0; transform: translateX(-50%) translateY(-50%); }
-      100% { opacity: 1; transform: translateX(0) translateY(-50%); }
-    }
-
-    /* Doctor Cards */
-    .doctor-card {
-      background: rgba(255,255,255,0.25);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-md);
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      backdrop-filter: blur(5px);
-    }
-
-    .doctor-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-
-    .doctor-card img {
-      width: 100%;
-      border-radius: var(--radius-md);
-      margin-bottom: 1rem;
-    }
-
-    .doctor-card h5 {
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-    }
-
-    .doctor-card h6 {
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-      text-decoration: underline;
-    }
-
-    .doctor-card p {
-      font-size: 0.9rem;
-    }
-  </style>
+  }
+</style>
 </head>
+
 <body>
 
-  <!-- Banner -->
-  <section class="banner mb-5">
-    <img src="./src/images/banner-health-care-team.jpg" alt="Health Care Team Banner">
-    <div class="banner-text text-white">
-      <h1>Meet Our Health Care Team</h1>
+<!-- HERO -->
+<section class="banner">
+  <div>
+    <h1>Care for DMD Patients</h1>
+    <p>Comprehensive, compassionate, and evidence-based care guidelines for Duchenne Muscular Dystrophy.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="container py-5 fadeup">
+  <h2 class="section-title">Introduction</h2>
+  <p class="text-center mx-auto" style="max-width: 700px;">
+    Duchenne Muscular Dystrophy (DMD) and Becker Muscular Dystrophy (BMD) are progressive neuromuscular disorders.
+    Though there’s no cure yet, following established care guidelines empowers patients and families to live fuller, healthier lives.
+  </p>
+</section>
+
+<!-- RESOURCES -->
+<section class="container py-5 fadeup">
+  <h2 class="section-title">Resources for Families</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="resource-card">
+        <div class="icon"><i class="fa fa-download"></i></div>
+        <h5>Guide for Families</h5>
+        <p>Comprehensive guide to understanding DMD care and support networks.</p>
+        <a href="https://www.parentprojectmd.org/care/care-guidelines/" target="_blank" class="btn btn-gradient">Download</a>
+      </div>
     </div>
-  </section>
-
-  <!-- Doctor Cards -->
-  <div class="container">
-    <div class="row g-4">
-
-      <div class="col-md-6 col-lg-4">
-        <div class="doctor-card">
-          <img src="./src/images/4.-Dr.--Dr.-Shaoli-Sarker.jpg" alt="Prof. Dr. Muhammad Mizanur Rahman">
-          <h5>Prof. Dr. Muhammad Mizanur Rahman</h5>
-          <h6>Neurologist</h6>
-          <p>MBBS (RMC), D- Card (BSMMU), CCD (BIRDEM), Diploma in Emergency Medicine (UK)</p>
-          <p>Former Chairman (Pediatric Neurology Dept.), BSMMU</p>
-        </div>
+    <div class="col-md-4">
+      <div class="resource-card">
+        <div class="icon"><i class="fa fa-list-check"></i></div>
+        <h5>Care Checklists</h5>
+        <p>Stage-specific care checklists from early to late stages.</p>
+        <a href="https://www.parentprojectmd.org/care/care-guidelines/" target="_blank" class="btn btn-gradient">View</a>
       </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="doctor-card">
-          <img src="./src/images/4.-Dr.--Dr.-Shaoli-Sarker.jpg" alt="Prof (Dr) ARM Luthful Kabir">
-          <h5>Prof (Dr) ARM Luthful Kabir</h5>
-          <h6>Respiratory Medicine</h6>
-          <p>MBBS, FCPS (Pediatrics)</p>
-          <p>Professor of Pediatrics, Ad-din Women’s Medical College, Moghbazar, Dhaka. Former Executive Director, ICMH, Matuail, Dhaka. Former Head of Pediatrics, Sylhet MAG Osmani Medical College, Faridpur Medical College, Sir Salimullah Medical College, Dhaka.</p>
-        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="resource-card">
+        <div class="icon"><i class="fa fa-book-open"></i></div>
+        <h5>Read More</h5>
+        <p>Explore in-depth articles, case studies, and evidence-based practices.</p>
+        <a href="https://www.parentprojectmd.org/care/care-guidelines/" target="_blank" class="btn btn-gradient">Explore</a>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="doctor-card">
-          <img src="./src/images/4.-Dr.--Dr.-Shaoli-Sarker.jpg" alt="Prof. Dr. Sarwar Ibne Salam Romel">
-          <h5>Prof. Dr. Sarwar Ibne Salam Romel</h5>
-          <h6>Pediatric Orthopedics</h6>
-          <p>MBBS, MS (Ortho)</p>
-          <p>Associate Professor, Dhaka Medical College Hospital's Department of Orthopaedics</p>
-        </div>
+<!-- TREATMENT OPTIONS -->
+<section class="container py-5 fadeup">
+  <h2 class="section-title">Treatment Options for DMD</h2>
+  <p class="text-center mx-auto mb-5" style="max-width: 800px;">
+    Current treatments for Duchenne Muscular Dystrophy (DMD) target inflammation, help produce dystrophin, or address the disease at a genetic level. 
+    Always consult your healthcare provider to determine the best treatment plan.
+  </p>
+
+  <div class="row g-4">
+    <!-- aGamree -->
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>aGamree® (vamorolone)</h5>
+        <ul class="text-start">
+          <li><strong>Function:</strong> Reduces inflammation by blocking proteins causing inflammation.</li>
+          <li><strong>Ages:</strong> 2 years and older.</li>
+          <li><strong>Administration:</strong> Oral suspension, taken once daily with meals.</li>
+          <li><strong>Side effects:</strong> Cushingoid features, psychiatric issues, weight gain, increased infection risk, etc.</li>
+          <li><strong>Assistance:</strong> Catalyst Pathway Program – Call <a href="tel:8334228259">833-422-8259</a>.</li>
+        </ul>
       </div>
+    </div>
 
-      <!-- Repeat cards for other doctors -->
-      <div class="col-md-6 col-lg-4">
-        <div class="doctor-card">
-          <img src="./src/images/4.-Dr.--Dr.-Shaoli-Sarker.jpg" alt="Dr. Shaoli Sarker">
-          <h5>Dr. Shaoli Sarker</h5>
-          <h6>Pediatric Neurology</h6>
-          <p>MBBS, FCPS(Child)</p>
-          <p>Assistant Professor, Bangladesh Shishu Hospital & Institute.</p>
-        </div>
+    <!-- Amondys 45 -->
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Amondys 45 (casimersen)</h5>
+        <ul class="text-start">
+          <li><strong>Function:</strong> Exon skipping therapy to make a shorter form of the dystrophin protein.</li>
+          <li><strong>Ages:</strong> All ages with the right genetic mutation.</li>
+          <li><strong>Administration:</strong> IV infusion, potentially with a port.</li>
+          <li><strong>Side effects:</strong> Respiratory infections, joint pain, fever.</li>
+          <li><strong>Assistance:</strong> SareptAssist – Call <a href="tel:8887273782">888-SAREPTA</a>.</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="doctor-card">
-          <img src="./src/images/4.-Dr.--Dr.-Shaoli-Sarker.jpg" alt="Dr. Dipa Saha">
-          <h5>Dr. Dipa Saha</h5>
-          <h6>Neurologist</h6>
-          <p>MBBS, FCPS (Ped), FCPS </p>
-          <p>Assistant Professor, Ped. Neurology & Development, Ad-din Medical College Hospital</p>
-        </div>
+    <!-- Elevidys -->
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Elevidys (delandistrogene moxeparvovec-rokl)</h5>
+        <ul class="text-start">
+          <li><strong>Function:</strong> Gene therapy to introduce mini-dystrophin.</li>
+          <li><strong>Ages:</strong> Eligibility criteria listed on Elevidys website.</li>
+          <li><strong>Administration:</strong> Single-dose IV infusion.</li>
+          <li><strong>Side effects:</strong> Liver injury, myositis, myocarditis.</li>
+          <li><strong>Assistance:</strong> SareptAssist – Call <a href="tel:8887273782">888-SAREPTA</a>.</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="doctor-card">
-          <img src="./src/images/4.-Dr.--Dr.-Shaoli-Sarker.jpg" alt="Dr. Shudipta Roy">
-          <h5>Dr. Shudipta Roy</h5>
-          <h6>Respiratory Medicine</h6>
-          <p>BCS (Health), MBBS (Dhaka), FCPS (Child)</p>
-          <p>-</p>
-        </div>
+    <!-- Emflaza -->
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Emflaza™ (deflazacourt)</h5>
+        <ul class="text-start">
+          <li><strong>Function:</strong> Corticosteroid to reduce inflammation.</li>
+          <li><strong>Ages:</strong> 2 years and older.</li>
+          <li><strong>Administration:</strong> Oral tablets or suspension, with or without food.</li>
+          <li><strong>Side effects:</strong> Weight gain, skin redness, abdominal discomfort.</li>
+          <li><strong>Assistance:</strong> PTC Cares – Call <a href="tel:8444782227">844-478-2227</a>.</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="col-md-6 col-lg-4">
-        <div class="doctor-card">
-          <img src="./src/images/4.-Dr.--Dr.-Shaoli-Sarker.jpg" alt="Dr. Jubaida Parvin">
-          <h5>Dr. Jubaida Parvin</h5>
-          <h6>Pediatric Neurologist</h6>
-          <p>BCS (Health), MBBS (Dhaka), FCPS (Child)</p>
-          <p>-</p>
-        </div>
+    <!-- Exondys 51 -->
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Exondys 51 (eteplirsen)</h5>
+        <ul class="text-start">
+          <li><strong>Function:</strong> Exon skipping therapy for dystrophin production.</li>
+          <li><strong>Ages:</strong> Any age with the right genetic mutation.</li>
+          <li><strong>Administration:</strong> Weekly IV infusion.</li>
+          <li><strong>Side effects:</strong> Allergic reactions, chest pain, wheezing.</li>
+          <li><strong>Assistance:</strong> SareptAssist – Call <a href="tel:8887273782">888-SAREPTA</a>.</li>
+        </ul>
       </div>
+    </div>
 
+    <!-- Prednisone -->
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Prednisone (prednisolone)</h5>
+        <ul class="text-start">
+          <li><strong>Function:</strong> Corticosteroid for inflammation.</li>
+          <li><strong>Ages:</strong> Consult with your doctor.</li>
+          <li><strong>Administration:</strong> Oral, with food.</li>
+          <li><strong>Side effects:</strong> Sleep problems, acne, weight gain, slow wound healing.</li>
+          <li><strong>Assistance:</strong> Generic drug, covered by most insurance plans.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Viltepso -->
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Viltepso® (viltolarsen)</h5>
+        <ul class="text-start">
+          <li><strong>Function:</strong> Exon skipping to help produce dystrophin.</li>
+          <li><strong>Ages:</strong> Any age with the right mutation.</li>
+          <li><strong>Administration:</strong> Weekly IV infusion.</li>
+          <li><strong>Side effects:</strong> Respiratory infections, injection site reactions, cough.</li>
+          <li><strong>Assistance:</strong> NS Support – Call <a href="tel:8336778778">833-NSSUPRT</a>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Vyondys 53 -->
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Vyondys 53 (golodirsen)</h5>
+        <ul class="text-start">
+          <li><strong>Function:</strong> Exon skipping therapy to decrease muscle weakness and prolong motor function.</li>
+          <li><strong>Ages:</strong> Any age with the right genetic mutation.</li>
+          <li><strong>Administration:</strong> Weekly IV infusion.</li>
+          <li><strong>Side effects:</strong> Allergic reactions, rash, fever.</li>
+          <li><strong>Assistance:</strong> SareptAssist – Call <a href="tel:8887273782">888-SAREPTA</a>.</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <!-- Bootstrap JS + jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="mt-5 text-center">
+    <h5 class="fw-bold text-danger">Key Points</h5>
+    <ul class="text-start d-inline-block text-secondary" style="max-width: 750px;">
+      <li>These treatments vary in how they work — exon skipping, gene therapy, or corticosteroids.</li>
+      <li>Most treatments are administered via oral or IV infusion.</li>
+      <li>Side effects range from mild (weight gain, cough) to severe (liver injury, allergic reactions).</li>
+      <li>Patient assistance programs help families access and afford treatments.</li>
+    </ul>
+    <p class="mt-3 fw-semibold">Always consult your healthcare provider before starting any treatment.</p>
+  </div>
+</section>
+
+<!-- Understanding therapy of DMD -->
+ <section id="therapy-dmd" class="therapy-section" style="background-color:#f9fafc; padding:80px 0; font-family:'Poppins', sans-serif;">
+  <div class="container" style="max-width:1100px; margin:auto;">
+    <div class="section-header" style="text-align:center; margin-bottom:50px;">
+      <h2 style="color:#007b83; font-weight:700;">Understanding Therapy in Duchenne Muscular Dystrophy (DMD)</h2>
+      <p style="color:#555; font-size:1.1rem; margin-top:10px;">A guide to physiotherapy and occupational therapy designed to help people with DMD stay active, comfortable, and independent.</p>
+    </div>
+
+    <div class="therapy-overview" style="margin-bottom:40px;">
+      <h3 style="color:#004c4c;">💬 Overview</h3>
+      <p>People with DMD benefit from regular <strong>physiotherapy</strong> and <strong>occupational therapy</strong> to stay active and maintain independence. These therapies aim to keep muscles flexible, improve posture, and make daily tasks easier.</p>
+    </div>
+
+    <div class="therapy-types" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-bottom:50px;">
+      <div class="therapy-box" style="background:#ffffff; border-radius:10px; padding:25px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <h4 style="color:#007b83;">🧩 Physiotherapy</h4>
+        <ul style="color:#333; line-height:1.6;">
+          <li>Maintains muscle strength and flexibility</li>
+          <li>Reduces risk of joint tightness and contractures</li>
+          <li>Encourages safe activity and stretching</li>
+          <li>Supports recovery after illness or surgery</li>
+        </ul>
+      </div>
+      <div class="therapy-box" style="background:#ffffff; border-radius:10px; padding:25px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+        <h4 style="color:#007b83;">🛋️ Occupational Therapy</h4>
+        <ul style="color:#333; line-height:1.6;">
+          <li>Makes everyday tasks easier and safer</li>
+          <li>Recommends helpful aids and home adjustments</li>
+          <li>Provides adaptive seating, splints, and mobility tools</li>
+          <li>Supports school participation and learning</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="therapy-stages" style="margin-bottom:50px;">
+      <h3 style="color:#004c4c;">🧍‍♂️ The Five Stages of DMD Care</h3>
+      <ul style="color:#333; line-height:1.8; margin-left:20px;">
+        <li><strong>Pre-Ambulant / Early Diagnosis (Green):</strong> Focus on play, stretching, and preventing joint tightness.</li>
+        <li><strong>Early Ambulant (Yellow):</strong> Support walking, balance, and conserve energy.</li>
+        <li><strong>Late Ambulant (Orange):</strong> Prevent falls and prepare for mobility aids.</li>
+        <li><strong>Early Non-Ambulant (Purple):</strong> Maintain posture, breathing, and wheelchair comfort.</li>
+        <li><strong>Late Non-Ambulant (Blue):</strong> Focus on comfort, respiratory health, and daily independence.</li>
+      </ul>
+    </div>
+
+    <div class="therapy-health" style="margin-bottom:50px;">
+      <h3 style="color:#004c4c;">💨 Breathing & Bone Health</h3>
+      <p>If breathing test results drop, regular specialist care is essential. DMD also increases the risk of weak bones (osteoporosis), especially when using corticosteroids.</p>
+      <p>See the <a href="https://dmdcareuk.org/information-and-guidance" target="_blank" style="color:#007b83; text-decoration:underline;">Bone Health Family Guide</a> for detailed advice.</p>
+    </div>
+
+    <div class="therapy-fractures" style="margin-bottom:50px;">
+      <h3 style="color:#004c4c;">🦴 Managing Fractures & Scoliosis</h3>
+      <ul style="color:#333; line-height:1.8;">
+        <li><strong>Spine Fractures:</strong> Report any back pain or tenderness to your team.</li>
+        <li><strong>Long Bone Fractures:</strong> Contact your neuromuscular team immediately if you break a bone.</li>
+        <li><strong>Scoliosis:</strong> Keep good posture and monitor your spine regularly with specialists.</li>
+      </ul>
+    </div>
+
+    <div class="therapy-mobility" style="margin-bottom:50px;">
+      <h3 style="color:#004c4c;">🚶‍♂️ Mobility & Wheelchairs</h3>
+      <p>Early use of a buggy or manual wheelchair may help manage fatigue. As DMD progresses, powered chairs support independence and posture.</p>
+      <p>Chairs should be custom-fitted to ensure comfort, balance, and skin protection.</p>
+    </div>
+
+    <div class="therapy-transition" style="margin-bottom:50px;">
+      <h3 style="color:#004c4c;">🔄 Transition & Ongoing Support</h3>
+      <ul style="color:#333; line-height:1.8;">
+        <li><strong>Transfer Stage:</strong> The shift from walking to non-walking usually lasts around 1.5 years and needs special support.</li>
+        <li><strong>Transition to Adult Care:</strong> Start planning early in your teenage years with your therapy team.</li>
+        <li><strong>Regular Appointments:</strong> Schedule at least every 6 months or as advised.</li>
+      </ul>
+    </div>
+
+    <div class="therapy-behavior" style="margin-bottom:50px;">
+      <h3 style="color:#004c4c;">🧠 Behaviour, Learning & Mental Health</h3>
+      <p>Some individuals with DMD may have learning or behavioural challenges. Therapists adapt sessions, use parent input, and support mental health by building confidence and social skills.</p>
+      <p>Families are encouraged to connect with other support groups for shared learning and emotional strength.</p>
+    </div>
+
+    <div class="therapy-links" style="background:#eef7f8; padding:30px; border-radius:10px;">
+      <h3 style="color:#007b83;">🔗 Useful Resources</h3>
+      <ul style="line-height:1.8; color:#333;">
+        <li><a href="https://dmdcareuk.org/information-and-guidance" target="_blank" style="color:#007b83;">DMD Care UK – Information & Guidance</a></li>
+        <li><a href="https://www.musculardystrophyuk.org" target="_blank" style="color:#007b83;">Muscular Dystrophy UK – Fatigue & Exercise Guides</a></li>
+        <li><a href="https://www.parentprojectmd.org/wp-content/uploads/2020/05/Range_of_motion_guidelines_download.pdf" target="_blank" style="color:#007b83;">Parent Project – Range of Motion Guidelines</a></li>
+        <li><a href="https://www.england.nhs.uk/wheelchair-services/" target="_blank" style="color:#007b83;">NHS Wheelchair Services</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- AGE / STAGE -->
+<section class="container py-5 fadeup">
+  <h2 class="section-title">Explore by Age / Stage</h2>
+  <div class="age-stage">
+    <div class="age-card">
+      <h4>Early Ambulatory</h4>
+      <p>Guidelines for care during early walking stages.</p>
+      <a href="#">Explore</a>
+    </div>
+    <div class="age-card">
+      <h4>Late Ambulatory</h4>
+      <p>Care for children transitioning to late ambulatory stages.</p>
+      <a href="#">Explore</a>
+    </div>
+    <div class="age-card">
+      <h4>Early Non-Ambulatory</h4>
+      <p>Support and resources for post-ambulatory stages.</p>
+      <a href="#">Explore</a>
+    </div>
+    <div class="age-card">
+      <h4>Late Non-Ambulatory</h4>
+      <p>Comprehensive guidance for advanced care needs.</p>
+      <a href="#">Explore</a>
+    </div>
+  </div>
+</section>
+
+<!-- KEY CARE AREAS -->
+<section class="container py-5 fadeup">
+  <h2 class="section-title">Key Care Areas</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="resource-card"><h5>Neuromuscular / Rehab</h5><p>Therapy, mobility aids, and regular neuromuscular assessments.</p></div>
+    </div>
+    <div class="col-md-4">
+      <div class="resource-card"><h5>Cardiac</h5><p>Heart health monitoring and early detection of cardiomyopathy.</p></div>
+    </div>
+    <div class="col-md-4">
+      <div class="resource-card"><h5>Respiratory</h5><p>Lung function tracking and respiratory therapy support.</p></div>
+    </div>
+    <div class="col-md-4">
+      <div class="resource-card"><h5>Nutrition</h5><p>Diet, supplements, and bone health management.</p></div>
+    </div>
+    <div class="col-md-4">
+      <div class="resource-card"><h5>Orthopedics</h5><p>Fracture prevention and scoliosis care.</p></div>
+    </div>
+    <div class="col-md-4">
+      <div class="resource-card"><h5>Psychosocial Support</h5><p>Emotional health and community resources.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE SECTION -->
+<section class="container py-5 fadeup">
+  <h2 class="section-title">Explore</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>For Families</h5>
+        <p>PPMD is here to connect you to news, resources, advancements in research—and most importantly—each other. :contentReference[oaicite:1]{index=1}</p>
+        <a href="https://www.parentprojectmd.org/care/for-families/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>For Carriers</h5>
+        <p>Carriers can have some symptoms of Duchenne, such as heart problems. All carriers should be evaluated by healthcare provider familiar with Duchenne. :contentReference[oaicite:2]{index=2}</p>
+        <a href="https://www.parentprojectmd.org/care/for-carriers/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>For Young Adults</h5>
+        <p>Our policy initiatives and programs are driven by teens & adults within our community. :contentReference[oaicite:3]{index=3}</p>
+        <a href="https://www.parentprojectmd.org/care/for-young-adults/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>For Healthcare Providers</h5>
+        <p>Care for people living with Duchenne includes multidisciplinary team of professionals providing coordinated, comprehensive care. :contentReference[oaicite:4]{index=4}</p>
+        <a href="https://www.parentprojectmd.org/care/for-healthcare-providers/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>For Educators</h5>
+        <p>PPMD wants to make sure that families within our Duchenne community are equipped with as many tools as possible to ensure a smooth start to the school year. :contentReference[oaicite:5]{index=5}</p>
+        <a href="https://www.parentprojectmd.org/care/for-educators/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Care Guidelines</h5>
+        <p>Although there is not yet a cure for Duchenne, there are accepted recommended treatments and therapies that can help people with Duchenne live longer, healthier lives. :contentReference[oaicite:6]{index=6}</p>
+        <a href="https://www.parentprojectmd.org/care/care-guidelines/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Find a Care Center</h5>
+        <p>PPMD’s Certified Duchenne Care Center Program helps to ensure centers comply with the standards of care and services that have been established. :contentReference[oaicite:7]{index=7}</p>
+        <a href="https://www.parentprojectmd.org/care/find-a-certified-duchenne-care-center/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Order Support Materials</h5>
+        <p>PPMD has assembled and made available printed materials regarding Duchenne muscular dystrophy. The following resources are available for families. :contentReference[oaicite:8]{index=8}</p>
+        <a href="https://www.parentprojectmd.org/care/support-care-materials/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Community Resource Center</h5>
+        <p>The PPMD Community Resource Center is meant to be a one-stop resource for every child, adult, and family living with Duchenne. :contentReference[oaicite:9]{index=9}</p>
+        <a href="https://www.parentprojectmd.org/care/community-resource-center/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="resource-card">
+        <h5>Insurance Access & Coverage Resources</h5>
+        <p>PPMD has assembled resources that will help families and medical providers at each stage of the healthcare access process. :contentReference[oaicite:10]{index=10}</p>
+        <a href="https://www.parentprojectmd.org/care/insurance-access-coverage-resources/" target="_blank" class="btn btn-gradient">Explore</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ADDITIONAL -->
+<section class="container text-center py-5 fadeup">
+  <h2 class="section-title">Additional Resources</h2>
+  <p>Explore more tools, articles, and patient support networks for DMD care.</p>
+  <a href="https://www.parentprojectmd.org/care/resources/" target="_blank" class="btn btn-gradient mt-3"><i class="fa fa-link"></i> Visit Resources</a>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Smooth fade-up reveal on scroll
+  const fadeEls = document.querySelectorAll('.fadeup');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('show');
+    });
+  }, { threshold: 0.2 });
+
+  fadeEls.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
