@@ -1,4 +1,13 @@
 $(document).ready(function() {
+    // Scroll reveal animation
+    window.addEventListener("scroll", () => {
+    document.querySelectorAll(".scroll-reveal").forEach((el) => {
+        const rect = el.getBoundingClientRect().top;
+        if (rect < window.innerHeight - 100) {
+        el.classList.add("visible");
+        }
+    });
+    });
 
     // Fade in header on page load
     $('header').css('opacity', 0).animate({ opacity: 1 }, 1000);
