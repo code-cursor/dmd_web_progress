@@ -3,376 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Care for DMD Patients</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Care</title>
+<link rel="stylesheet" href="./css/care.css">
+<link rel="shortcut icon" href="./src/images/DMD_care_bd_Logo.png" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<style>
-  :root {
-      /* Color palette */
-    --color-primary: #009966;       
-    --color-primary-2: #00B27D;
-    --color-bg-1: #f4f4f4;
-    --color-bg-2: #bb2d3b;
-    --mint: #c6f4d6;
-
-    /* Text */
-    --text-color-primary: #f4f4f4;
-    --text-color-default: #009966;
-
-    /* radius */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-
-    /* font size */
-    --font-size-sm: 0.8rem;
-    --dark-blue: #1d3557;
-    --light-blue: #7ab8f0;
-    --peach: #ffe1c6;
-    --lavender: #e6e6fa;
-    --orange: #ffb703;
-    --white: #fff;
-  }
-
-* {
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-}
-
-/* banner section start */
-/* --- Banner Section --- */
-.banner {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-bg-1));
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 60vh;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Heading */
-.banner h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  letter-spacing: -0.5px;
-}
-
-/* Subtext */
-.banner p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Decorative background shapes (optional, subtle) */
-.banner::before,
-.banner::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.12;
-}
-
-.banner::before {
-  width: 300px;
-  height: 300px;
-  background: #fff;
-  top: -80px;
-  left: -80px;
-}
-
-.banner::after {
-  width: 400px;
-  height: 400px;
-  background: #fff;
-  bottom: -100px;
-  right: -100px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .banner {
-    padding: 80px 20px;
-  }
-
-  .banner h1 {
-    font-size: 2rem;
-  }
-
-  .banner p {
-    font-size: 1rem;
-  }
-}
-
-
-/* banner section end */
-  .fadeup {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease-out;
-  }
-  .fadeup.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  h2.section-title {
-    text-align: center;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 2.5rem;
-    position: relative;
-  }
-  h2.section-title::after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 5px;
-    background: var(--mint);
-    margin: 0.8rem auto 0;
-    border-radius: 3px;
-    animation: pulse 2s infinite ease-in-out;
-  }
-  @keyframes pulse {
-    0%, 100% { transform: scaleX(1); opacity: 0.6; }
-    50% { transform: scaleX(1.4); opacity: 1; }
-  }
-
-  .resource-card {
-    border: none;
-    border-radius: 20px;
-    background: var(--white);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    transition: all 0.4s ease;
-    text-align: center;
-    padding: 2rem 1.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .resource-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #84faaf2d 0%, #8fd2f431 100%);
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-  .resource-card:hover::before { opacity: 1; }
-  .resource-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  }
-  .resource-card .icon {
-    font-size: 2.4rem;
-    color: var(--light-blue);
-    margin-bottom: 1rem;
-    animation: float 3s infinite ease-in-out;
-  }
-
-  .btn-gradient {
-    background: linear-gradient(135deg, var(--color-primary), var(--mint));
-    color: var(--white);
-    border: none;
-    border-radius: 50px;
-    padding: 0.6rem 1.8rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .btn-gradient:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  }
-
-  .age-card {
-    flex: 1 1 260px;
-    /* background: linear-gradient(135deg, #5ca0f2, #457b9d81); */
-    /* color: var(--white); */
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, background 0.3s ease;
-  }
-  .age-card:hover {
-    transform: translateY(-8px);
-    background: linear-gradient(135deg, rgb(168, 255, 229), var(--mint));
-  }
-  
-
-  .wave {
-    position: relative;
-    height: 80px;
-    background: transparent;
-    overflow: hidden;
-  }
-  .wave::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 50%;
-    background: radial-gradient(circle at 50% 100%, Green 30%, transparent 70%);
-    animation: waveMove 6s infinite linear;
-  }
-  @keyframes waveMove {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* age / stage */
-
-  .age-stage {
-  gap: 1rem;
-}
-
-.age-card {
-  background-color: #D5FDFD;
-  border: 2px solid #54E1FF;
-  flex: 1 1 calc(25% - 1rem);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 1.5rem;
-  border-radius: 5px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  position: relative;
-  cursor: pointer;
-  min-width: 220px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.age-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-}
-
-.age-content h4 {
-  font-weight: 700;
-  margin: 0 0 0.25rem 0;
-}
-
-.age-content p {
-  margin: 0;
-}
-
-.age-arrow {
-  background-color: #54E1FF; 
-  padding: 1rem 1.3rem;
-  font-size: 1.5rem;
-  font-weight: 900;
-  user-select: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 50px;
-}
-
-/* Responsive - stack cards vertically on small screens */
-@media (max-width: 767.98px) {
-  .age-stage {
-    flex-direction: column;
-  }
-  .age-card {
-    flex: 1 1 100%;
-  }
-}
-
-/* --- EXPLORE SECTION STYLE --- */
-.explore-section {
-  background-color: #f9fbff;
-}
-
-.section-title {
-  font-weight: 700;
-  color: #222;
-}
-
-.section-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 35px 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  position: relative;
-  text-align: left;
-  height: 100%;
-}
-
-.section-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-}
-
-.section-card h5 {
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #333;
-}
-
-.section-card p {
-  color: #777;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  min-height: 70px;
-}
-
-.btn-link {
-  display: inline-block;
-  margin-top: 15px;
-  color: #007bff;
-  font-weight: 500;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.btn-link:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-/* Icon styling */
-.card-icon {
-  font-size: 30px;
-  margin-bottom: 15px;
-  color: #6c63ff;
-}
-
-/* Top border colors */
-.border-top-blue { border-top: 4px solid #4da6ff; }
-.border-top-orange { border-top: 4px solid #f5a623; }
-.border-top-teal { border-top: 4px solid #36cfc9; }
-.border-top-red { border-top: 4px solid #ff6b6b; }
-.border-top-yellow { border-top: 4px solid #ffcc00; }
-.border-top-green { border-top: 4px solid #2ecc71; }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .section-card {
-    text-align: center;
-  }
-  .card-icon {
-    font-size: 28px;
-  }
-}
-</style>
 </head>
 
 <body>
+<!-- Dynamic Header -->
+<div id="header-container"></div>
 
 <!-- HERO -->
 <section class="banner">
@@ -383,7 +38,7 @@
 </section>
 
   <!-- INTRO -->
-<section class="container py-5 fadeup">
+<section class="container py-5 fadeup scroll-reveal">
   <h2 class="section-title">Introduction</h2>
   <p class="text-center mx-auto" style="max-width: 700px;">
     Duchenne Muscular Dystrophy (DMD) and Becker Muscular Dystrophy (BMD) are progressive neuromuscular disorders.
@@ -392,7 +47,7 @@
 </section>
 
 <!-- RESOURCES -->
-<section class="container py-5 fadeup">
+<section class="container py-5 fadeup scroll-reveal">
   <h2 class="section-title">Resources for Families</h2>
   <div class="row g-4">
     <div class="col-md-4">
@@ -423,14 +78,14 @@
 </section>
 
 <!-- TREATMENT OPTIONS -->
-<section class="container py-5 fadeup">
+<section class="container py-5 fadeup scroll-reveal">
   <h2 class="section-title">Treatment Options for DMD</h2>
   <p class="text-center mx-auto mb-5" style="max-width: 800px;">
     Current treatments for Duchenne Muscular Dystrophy (DMD) target inflammation, help produce dystrophin, or address the disease at a genetic level. 
     Always consult your healthcare provider to determine the best treatment plan.
   </p>
 
-  <div class="row g-4">
+  <div class="row g-4 scroll-reveal">
     <!-- aGamree -->
     <div class="col-md-6">
       <div class="resource-card">
@@ -536,7 +191,7 @@
     </div>
   </div>
 
-  <div class="mt-5 text-center">
+  <div class="mt-5 text-center scroll-reveal">
     <h5 class="fw-bold text-danger">Key Points</h5>
     <ul class="text-start d-inline-block text-secondary" style="max-width: 750px;">
       <li>These treatments vary in how they work — exon skipping, gene therapy, or corticosteroids.</li>
@@ -549,19 +204,19 @@
 </section>
 
 <!-- Understanding therapy of DMD -->
- <section id="therapy-dmd" class="therapy-section" style="background-color:#f9fafc; padding:80px 0; font-family:'Poppins', sans-serif;">
+ <section id="therapy-dmd" class="therapy-section scroll-reveal" style="background-color:#f9fafc; padding:80px 0; font-family:'Poppins', sans-serif;">
   <div class="container" style="max-width:1100px; margin:auto;">
-    <div class="section-header" style="text-align:center; margin-bottom:50px;">
+    <div class="section-header scroll-reveal" style="text-align:center; margin-bottom:50px;">
       <h2 style="color:#007b83; font-weight:700;">Understanding Therapy in Duchenne Muscular Dystrophy (DMD)</h2>
       <p style="color:#555; font-size:1.1rem; margin-top:10px;">A guide to physiotherapy and occupational therapy designed to help people with DMD stay active, comfortable, and independent.</p>
     </div>
 
-    <div class="therapy-overview" style="margin-bottom:40px;">
+    <div class="therapy-overview scroll-reveal" style="margin-bottom:40px;">
       <h3 style="color:#004c4c;">💬 Overview</h3>
       <p>People with DMD benefit from regular <strong>physiotherapy</strong> and <strong>occupational therapy</strong> to stay active and maintain independence. These therapies aim to keep muscles flexible, improve posture, and make daily tasks easier.</p>
     </div>
 
-    <div class="therapy-types" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-bottom:50px;">
+    <div class="therapy-types scroll-reveal" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-bottom:50px;">
       <div class="therapy-box" style="background:#ffffff; border-radius:10px; padding:25px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
         <h4 style="color:#007b83;">🧩 Physiotherapy</h4>
         <ul style="color:#333; line-height:1.6;">
@@ -571,7 +226,7 @@
           <li>Supports recovery after illness or surgery</li>
         </ul>
       </div>
-      <div class="therapy-box" style="background:#ffffff; border-radius:10px; padding:25px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+      <div class="therapy-box scroll-reveal" style="background:#ffffff; border-radius:10px; padding:25px; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
         <h4 style="color:#007b83;">🛋️ Occupational Therapy</h4>
         <ul style="color:#333; line-height:1.6;">
           <li>Makes everyday tasks easier and safer</li>
@@ -582,7 +237,7 @@
       </div>
     </div>
 
-    <div class="therapy-stages" style="margin-bottom:50px;">
+    <div class="therapy-stages scroll-reveal" style="margin-bottom:50px;">
       <h3 style="color:#004c4c;">🧍‍♂️ The Five Stages of DMD Care</h3>
       <ul style="color:#333; line-height:1.8; margin-left:20px;">
         <li><strong>Pre-Ambulant / Early Diagnosis (Green):</strong> Focus on play, stretching, and preventing joint tightness.</li>
@@ -593,13 +248,13 @@
       </ul>
     </div>
 
-    <div class="therapy-health" style="margin-bottom:50px;">
+    <div class="therapy-health scroll-reveal" style="margin-bottom:50px;">
       <h3 style="color:#004c4c;">💨 Breathing & Bone Health</h3>
       <p>If breathing test results drop, regular specialist care is essential. DMD also increases the risk of weak bones (osteoporosis), especially when using corticosteroids.</p>
       <p>See the <a href="https://dmdcareuk.org/information-and-guidance" target="_blank" style="color:#007b83; text-decoration:underline;">Bone Health Family Guide</a> for detailed advice.</p>
     </div>
 
-    <div class="therapy-fractures" style="margin-bottom:50px;">
+    <div class="therapy-fractures scroll-reveal" style="margin-bottom:50px;">
       <h3 style="color:#004c4c;">🦴 Managing Fractures & Scoliosis</h3>
       <ul style="color:#333; line-height:1.8;">
         <li><strong>Spine Fractures:</strong> Report any back pain or tenderness to your team.</li>
@@ -608,13 +263,13 @@
       </ul>
     </div>
 
-    <div class="therapy-mobility" style="margin-bottom:50px;">
+    <div class="therapy-mobility scroll-reveal" style="margin-bottom:50px;">
       <h3 style="color:#004c4c;">🚶‍♂️ Mobility & Wheelchairs</h3>
       <p>Early use of a buggy or manual wheelchair may help manage fatigue. As DMD progresses, powered chairs support independence and posture.</p>
       <p>Chairs should be custom-fitted to ensure comfort, balance, and skin protection.</p>
     </div>
 
-    <div class="therapy-transition" style="margin-bottom:50px;">
+    <div class="therapy-transition scroll-reveal" style="margin-bottom:50px;">
       <h3 style="color:#004c4c;">🔄 Transition & Ongoing Support</h3>
       <ul style="color:#333; line-height:1.8;">
         <li><strong>Transfer Stage:</strong> The shift from walking to non-walking usually lasts around 1.5 years and needs special support.</li>
@@ -623,13 +278,13 @@
       </ul>
     </div>
 
-    <div class="therapy-behavior" style="margin-bottom:50px;">
+    <div class="therapy-behavior scroll-reveal" style="margin-bottom:50px;">
       <h3 style="color:#004c4c;">🧠 Behaviour, Learning & Mental Health</h3>
       <p>Some individuals with DMD may have learning or behavioural challenges. Therapists adapt sessions, use parent input, and support mental health by building confidence and social skills.</p>
       <p>Families are encouraged to connect with other support groups for shared learning and emotional strength.</p>
     </div>
 
-    <div class="therapy-links" style="background:#eef7f8; padding:30px; border-radius:10px;">
+    <div class="therapy-links scroll-reveal" style="background:#eef7f8; padding:30px; border-radius:10px;">
       <h3 style="color:#007b83;">🔗 Useful Resources</h3>
       <ul style="line-height:1.8; color:#333;">
         <li><a href="https://dmdcareuk.org/information-and-guidance" target="_blank" style="color:#007b83;">DMD Care UK – Information & Guidance</a></li>
@@ -641,9 +296,8 @@
   </div>
 </section>
 
-
 <!-- AGE / STAGE -->
-<section class="container py-5 fadeup">
+<section class="container py-5 fadeup scroll-reveal">
   <h2 class="section-title mb-4">Explore by Age / Stage</h2>
   <div class="age-stage d-flex flex-wrap justify-content-between gap-3">
     <div class="age-card d-flex align-items-center justify-content-between">
@@ -677,9 +331,8 @@
   </div>
 </section>
 
-
 <!-- KEY CARE AREAS -->
-<section class="container py-5 fadeup">
+<section class="container py-5 fadeup scroll-reveal">
   <h2 class="section-title">Key Care Areas</h2>
   <div class="row g-4">
     <div class="col-md-4">
@@ -704,7 +357,7 @@
 </section>
 
 <!-- EXPLORE SECTION -->
-<section class="container py-5 fadeup explore-section">
+<section class="container py-5 fadeup explore-section scroll-reveal">
   <h2 class="section-title text-center mb-5">Explore</h2>
   
   <div class="row g-4 justify-content-center">
@@ -785,13 +438,12 @@
 </section>
 
 <!-- ADDITIONAL -->
-<section class="container text-center py-5 fadeup">
+<section class="container text-center py-5 fadeup scroll-reveal">
   <h2 class="section-title">Additional Resources</h2>
   <p>Explore more tools, articles, and patient support networks for DMD care.</p>
   <a href="https://www.parentprojectmd.org/care/resources/" target="_blank" class="btn btn-gradient mt-3"><i class="fa fa-link"></i> Visit Resources</a>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
@@ -804,7 +456,28 @@
     });
   }, { threshold: 0.2 });
   fadeEls.forEach(el => observer.observe(el));
+
+  // Scroll reveal animation
+    window.addEventListener("scroll", () => {
+    document.querySelectorAll(".scroll-reveal").forEach((el) => {
+        const rect = el.getBoundingClientRect().top;
+        if (rect < window.innerHeight - 100) {
+        el.classList.add("visible");
+        }
+    });
+    });
 </script>
+
+  <!-- Dynamic Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- link js for header & footer -->
+  <script src="./js/script.js"></script>
+
+  
 
 </body>
 </html>
