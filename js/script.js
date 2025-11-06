@@ -4,6 +4,16 @@ $(document).ready(function() {
     $("#footer-container").load("footer.html");
     $("#banner-container").load("banner.html");
 
+    // Scroll reveal animation
+    window.addEventListener("scroll", () => {
+    document.querySelectorAll(".scroll-reveal").forEach((el) => {
+        const rect = el.getBoundingClientRect().top;
+        if (rect < window.innerHeight - 100) {
+        el.classList.add("visible");
+        }
+    });
+    });
+
     // Initialize Swiper after DOM is ready
         const swiper = new Swiper('.partners-swiper', {
             slidesPerView: 4, // default for large screens
