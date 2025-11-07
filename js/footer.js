@@ -31,3 +31,18 @@ $(document).ready(function() {
   $('footer').css('opacity', 0); // Start with hidden footer
   $('footer').animate({ opacity: 1 }, 1000); // Fade it in when page loads
 });
+
+  // Show button when user scrolls down 100px
+  window.onscroll = function() {
+    const btn = document.getElementById("topUpBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Scroll smoothly to top when button clicked
+  document.getElementById("topUpBtn").addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });

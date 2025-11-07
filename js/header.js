@@ -62,3 +62,4 @@ document.querySelectorAll('.bottom-bar button').forEach(btn => {
   // $('header').css('opacity', 0); 
   // $('header').animate({ opacity: 1 }, 1000); 
 });
+

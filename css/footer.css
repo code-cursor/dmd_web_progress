@@ -92,3 +92,32 @@
     padding-bottom: 50px;
   }
 }
+
+/* Top-Up Button (like WhatsApp floating button) */
+#topUpBtn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 80px; /* Adjust as needed above footer */
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+#topUpBtn:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.1);
+}
+
+/* Icon inside the button */
+#topUpBtn i {
+  font-size: 18px;
+}
+
