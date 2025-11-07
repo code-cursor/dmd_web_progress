@@ -47,20 +47,26 @@
       color: #333;
       text-transform: uppercase;
       letter-spacing: 1px;
+      margin-bottom: 1.5rem;
     }
 
-    /* Responsive grid */
     .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.2rem;
     }
-
     .gallery-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
     }
 
     .gallery-item.show {
