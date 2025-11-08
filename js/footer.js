@@ -1,15 +1,15 @@
-$(document).ready(function() {
+$('.footer-link').on('click', function(e) {
+  const target = $(this).attr('href');
 
-  // Smooth Scroll on Footer Links
-  $('.footer-link').on('click', function(e) {
+  // If link starts with "#" (same-page link), do smooth scroll
+  if (target.startsWith("#")) {
     e.preventDefault();
-    const target = $(this).attr('href');
-    
-    // Smooth scroll to the target element
     $('html, body').animate({
       scrollTop: $(target).offset().top
     }, 1000);
-  });
+  }
+  // Otherwise (normal link like contact.html), let it work normally
+});
 
   // Social Media Icon Animation: Hover Effect
   $('.social-icon').hover(
