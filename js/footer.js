@@ -46,3 +46,9 @@ $(document).ready(function() {
   document.getElementById("topUpBtn").addEventListener("click", function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  // social sidebar
+  $(document).ready(function(){
+    $('.social-sidebar').css({opacity: 0, left: '-60px'});
+    $('.social-sidebar').animate({opacity: 1, left: '0'}, 800);
+  });

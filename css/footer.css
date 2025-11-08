@@ -121,3 +121,135 @@
   font-size: 18px;
 }
 
+/* Social Sidebar Styling --------------
+-----------------------------------*/
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+.social-sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-sidebar ul li {
+  margin: 5px 0;
+}
+
+.social-sidebar ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px; /* Default compact width (only icons) */
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 0 30px 30px 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Label text */
+.social-sidebar ul li a span {
+  margin-left: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Individual button colors */
+.social-sidebar .facebook {
+  background-color: #3b5998;
+}
+
+.social-sidebar .pinterest {
+  background-color: #bd081c;
+}
+
+.social-sidebar .twitter {
+  background-color: #55acee;
+}
+
+.social-sidebar .youtube {
+  background-color: #ff0000;
+}
+
+/* Hover effect - expand & show text */
+.social-sidebar ul li a:hover {
+  width: 180px; /* Expanded width */
+  transform: translateX(10px);
+  opacity: 0.95;
+}
+
+.social-sidebar ul li a:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Icon style */
+.social-sidebar ul li a i {
+  font-size: 20px;
+}
+
+/* ============================
+   Responsive Adjustments
+============================ */
+
+/* Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  .social-sidebar ul li a {
+    width: 30px;
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .social-sidebar ul li a i {
+    font-size: 16px;
+  }
+
+  .social-sidebar ul li a:hover {
+    width: 140px;
+  }
+}
+
+/* Tablets (577px–991px) */
+@media (min-width: 577px) and (max-width: 991px) {
+  .social-sidebar ul li a {
+    width: 40px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .social-sidebar ul li a i {
+    font-size: 18px;
+  }
+
+  .social-sidebar ul li a:hover {
+    width: 160px;
+  }
+}
+
+/* Desktop (992px and above) */
+@media (min-width: 992px) {
+  .social-sidebar ul li a {
+    width: 50px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .social-sidebar ul li a i {
+    font-size: 20px;
+  }
+
+  .social-sidebar ul li a:hover {
+    width: 180px;
+  }
+}
+
