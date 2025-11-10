@@ -198,7 +198,7 @@
 
     .learn-btn {
       display: inline-block;
-      background-color: #00a859;
+      background-color: var(--color-primary);
       color: #fff;
       font-weight: 500;
       padding: 10px 25px;
@@ -209,7 +209,7 @@
     }
 
     .learn-btn:hover {
-      background-color: #00c46a;
+      background-color: var(--color-primary-2);
       transform: translateY(-2px);
     }
 
@@ -315,19 +315,19 @@
     .story-author {
       margin-top: 15px;
       font-weight: 600;
-      color: #2e7d32;
+      color: var(--color-primary-2);
     }
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      background-color: #388e3c;
+      background-color: var(--color-primary);
       border-radius: 50%;
       padding: 15px;
     }
 
     .read-all-btn {
       margin-top: 50px;
-      background: #43a047;
+      background: var(--color-primary);
       color: #fff;
       font-weight: 600;
       padding: 15px 40px;
@@ -340,7 +340,7 @@
     }
 
     .read-all-btn:hover {
-      background: #2e7d32;
+      background: var(--color-primary-2);
       transform: scale(1.05);
       box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
     }

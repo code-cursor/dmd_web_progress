@@ -135,6 +135,7 @@ h2.section-title::after {
 }
 
 /* ================= RESOURCE CARDS ================= */
+/* RESOURCE CARD */
 .resource-card {
   border: none;
   border-radius: 20px;
@@ -142,7 +143,7 @@ h2.section-title::after {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 3rem;
   position: relative;
   overflow: hidden;
 }
@@ -154,6 +155,7 @@ h2.section-title::after {
   background: linear-gradient(135deg, #84faaf2d 0%, #8fd2f431 100%);
   opacity: 0;
   transition: opacity 0.4s;
+  z-index: 0;
 }
 
 .resource-card:hover::before { opacity: 1; }
@@ -165,9 +167,39 @@ h2.section-title::after {
 
 .resource-card .icon {
   font-size: 2.4rem;
-  color: var(--light-blue);
+  color: var(--color-primary-2);
   margin-bottom: 1rem;
   animation: float 3s infinite ease-in-out;
+  z-index: 1;
+  position: relative;
+}
+
+.resource-card h5,
+.resource-card p,
+.resource-card .btn {
+  position: relative;
+  z-index: 1;
+}
+
+/* BUTTON FIX */
+.btn-gradient {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #56ccf2, #2f80ed);
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(47, 128, 237, 0.3);
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(47, 128, 237, 0.4);
+  background: linear-gradient(135deg, #2f80ed, #56ccf2);
+  color: #fff;
 }
 
 /* ================= BUTTONS ================= */
@@ -233,6 +265,9 @@ h2.section-title::after {
   align-items: center;
   justify-content: center;
   min-width: 50px;
+}
+.age-arrow:hover{
+  background-color: #025466;
 }
 
 @media (max-width: 767.98px) {

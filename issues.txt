@@ -1,0 +1,1 @@
+add: Individual patients history & all patient list page

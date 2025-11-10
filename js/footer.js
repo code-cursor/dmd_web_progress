@@ -30,7 +30,6 @@ $('.footer-link').on('click', function(e) {
   // Fade In Footer on Page Load
   $('footer').css('opacity', 0); // Start with hidden footer
   $('footer').animate({ opacity: 1 }, 1000); // Fade it in when page loads
-});
 
   // Show button when user scrolls down 100px
   window.onscroll = function() {
