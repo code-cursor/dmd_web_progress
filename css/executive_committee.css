@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tiro+Bangla&display=swap');
+
 :root {
   --color-primary: #009966;
   --color-primary-2: #00B27D;
@@ -8,10 +10,11 @@
   --color-hero-end: #b2f7e1;
   --text-heading: #007965;
 }
-
-    body {
-      background: #f8faff;
-      font-family: 'Poppins', sans-serif;
+    * {
+      font-family:'Poppins';
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     .container{

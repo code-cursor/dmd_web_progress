@@ -4,32 +4,35 @@ const patients = [
     age: "Diagnosed at 12 years",
     year: "2022",
     status: "Wheelchair user",
-    photo: "./src/images/p_muntasir_billah.jpg"
+    photo: "./src/images/p_muntasir_billah.jpg",
+    link: "patient_story.html"
   },
   {
     name: "Arif Rahman",
     age: "Diagnosed at 6 years",
     year: "2021",
     status: "Can walk with support",
-    photo: "./src/images/patients_2.jpg"
+    photo: "./src/images/patients_2.jpg",
+    link: "patient-arif.html"
   },
   {
     name: "Zihan Ahmed",
     age: "Diagnosed at 8 years",
     year: "2020",
     status: "Under physiotherapy care",
-    photo: "./src/images/patients_3.jpg"
+    photo: "./src/images/patients_3.jpg",
+    link: "patient-zihan.html"
   },
   {
     name: "Samiul Hasan",
     age: "Diagnosed at 7 years",
     year: "2023",
     status: "Uses wheelchair",
-    photo: "https://i.ibb.co/Dg7QyC5/child4.jpg"
+    photo: "https://i.ibb.co/Dg7QyC5/child4.jpg",
+    link: "patient-samiul.html"
   }
 ];
 
-// Load patient cards dynamically
 $(document).ready(function () {
   let html = "";
   patients.forEach(p => {
@@ -48,7 +51,13 @@ $(document).ready(function () {
       </div>
     `;
   });
+
   $("#patientList").html(html);
+
+  // Change link dynamically after cards are added to DOM
+  $("#patientList .patient-card").each(function(index){
+    $(this).find(".btn-view").attr("href", patients[index].link);
+  });
 
   // Scroll reveal animation
   function revealCards() {
@@ -61,5 +70,5 @@ $(document).ready(function () {
   }
 
   window.addEventListener("scroll", revealCards);
-  revealCards(); // trigger animation on load for visible cards
+  revealCards(); // trigger animation on load
 });

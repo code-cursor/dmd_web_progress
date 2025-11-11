@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tiro+Bangla&display=swap');
+    
+    * {
+      font-family:'Poppins';
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       background-color: #fafafa;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Tiro Bangla', 'Poppins';
     }
 
     .py-5 {
@@ -64,9 +72,10 @@
 
     .video-title {
       background: rgba(40, 55, 75, 0.85);
+      font-family: 'Tiro Bangla';
       color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
+      font-weight: 400;
+      font-size: 1.1rem;
       padding: 10px 15px;
       border-radius: 0 0 10px 10px;
       text-align: center;

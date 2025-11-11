@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tiro+Bangla&display=swap');
+
 /* =========================
         Root Variables
 ========================= */
@@ -21,7 +23,7 @@
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -224,6 +226,12 @@
 /* =========================
     Patient Story Section
 ========================= */
+
+    .story-text {
+      font-family: 'Tiro Bangla';
+      font-size: 1.1rem;
+    }
+
     .patient-stories-section {
       padding: 70px 20px;
       text-align: center;
@@ -313,8 +321,9 @@
     }
 
     .story-author {
+      font-family: 'Tiro Bangla';
       margin-top: 15px;
-      font-weight: 600;
+      font-size: 1rem;
       color: var(--color-primary-2);
     }
 

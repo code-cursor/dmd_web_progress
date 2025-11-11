@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tiro+Bangla&display=swap');
+
 /* ===== Reset / Base ===== */
     * {
       box-sizing: border-box;
@@ -6,13 +8,15 @@
     }
 
     body {
-      font-family: "Poppins", sans-serif;
       background-color: #f8fdf9;
       color: #1b4332;
     }
 
     /* ===== Section ===== */
     .patient-section {
+      font-family: 'Tiro Bangla';
+      font-size: 1.2rem;
+      font-weight: 400;
       padding: 60px 0;
       display: flex;
       align-items: center;

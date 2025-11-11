@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tiro+Bangla&display=swap');
+
 :root {
   /* Color palette */
   --color-primary: #009966;       
@@ -18,7 +20,7 @@
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Tiro Bangla', 'Poppins';
   box-sizing: border-box;
 }
 
