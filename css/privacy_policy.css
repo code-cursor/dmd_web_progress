@@ -1,0 +1,99 @@
+/* =========================
+   Root Variables
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tiro+Bangla&display=swap');
+
+:root {
+  /* Color palette */
+  --color-primary: #009966;       
+  --color-primary-2: #00B27D;
+  --color-bg-1: #f4f4f4;
+  --color-bg-2: #bb2d3b;
+
+  /* Text */
+  --text-color-primary: #f4f4f4;
+  --text-color-default: #009966;
+}
+
+/* =========================
+   Global Styles
+========================= */
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.page-title {
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.card {
+  border: none;
+  background-color: #0099668c;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   Accordion Styles
+========================= */
+.accordion-button {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Expanded state handled by Bootstrap */
+.accordion-button:not(.collapsed) {
+  background-color: #ffeb3b; 
+  color: #000;
+}
+
+button.accordion-button::after {
+  color: yellow; /* Arrow icon */
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-body {
+  background-color: #fff;
+}
+
+/* =========================
+   Contact Box
+========================= */
+.contact-box {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* =========================
+   Responsive Adjustments
+========================= */
+@media (max-width: 425px) {
+  .form-section {
+    font-size: 90%;
+  }
+}
+
