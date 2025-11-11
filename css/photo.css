@@ -81,7 +81,7 @@
     display: block;
     border-radius: 10px;
     object-fit: cover;
-    /* aspect-ratio: 4/3; */
+    aspect-ratio: 4/3;
     transition: transform 0.5s ease;
     }
 
@@ -94,7 +94,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: rgba(100, 120, 40, 0.9); /* olive-greenish block */
+    background-color: rgba(100, 120, 40, 0.514);
     padding: 8px 16px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
