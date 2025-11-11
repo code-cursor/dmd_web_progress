@@ -222,6 +222,14 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* reponsive issues */
+    @media (max-width: 425px) {
+    .form-section{
+        font-size: 90%;
+    }
+    }
+    
     /* ================= ANIMATIONS ================= */
     .scroll-reveal {
     opacity: 0;
@@ -247,12 +255,5 @@ body {
     100% {
         transform: scale(1);
         opacity: 1;
-    }
-    }
-
-    /* reponsive issues */
-    @media (max-width: 425px) {
-    .form-section{
-        font-size: 90%;
     }
     }
