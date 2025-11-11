@@ -10,7 +10,6 @@
 
     /* ===== Section ===== */
     .patient-section {
-      font-family: 'Tiro Bangla';
       font-size: 1.2rem;
       font-weight: 400;
       padding: 60px 0;
@@ -78,6 +77,7 @@
 
     /* ===== Right Side (Text) ===== */
     .patient-info h2 {
+      font-family: 'Tiro Bangla';
       color: #081c15;
       font-weight: 700;
       margin-bottom: 15px;
@@ -95,6 +95,7 @@
         padding: 25px;
       }
       .patient-info {
+        font-family: 'Tiro Bangla';
         margin-top: 25px;
       }
     }
