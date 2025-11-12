@@ -20,7 +20,7 @@
 }
 
 * {
-  font-family: 'Tiro Bangla', 'Poppins';
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
@@ -35,6 +35,7 @@ body {
 
 .section-title {
   margin-bottom: 60px;
+  text-align: center;
 }
 
 .section-title h1 {
@@ -69,10 +70,19 @@ body {
 =========================== */
 .single_address {
   position: relative;
-  overflow: hidden;
   margin-bottom: 25px;
-  padding-left: 70px;
+  padding-left: 80px; /* space for icon */
   transition: all 0.3s ease;
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.single_address:hover {
+  background: rgba(0, 153, 102, 0.05);
+  transform: translateY(-3px);
 }
 
 .single_address i {
@@ -84,29 +94,30 @@ body {
   line-height: 55px;
   text-align: center;
   font-size: 22px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   transition: all 0.3s ease;
 }
 
 .single_address:hover i {
   background: var(--color-primary);
   color: #fff;
-  transform: scale(1.1);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .single_address h4 {
   font-size: 18px;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   font-weight: 600;
   color: #222;
 }
 
 .single_address p {
   margin: 0;
-  color: #666;
+  color: #555;
   line-height: 1.5;
 }
 
@@ -121,7 +132,7 @@ body {
   }
 }
 
-/* Medium screens (tablets ≤991px) */
+/* Medium screens (≤991px) */
 @media (max-width: 991.98px) {
   .section-title h1 {
     font-size: 36px;
@@ -136,7 +147,7 @@ body {
   }
 
   .single_address {
-    padding-left: 60px;
+    padding-left: 70px;
   }
 
   .single_address i {
@@ -147,7 +158,7 @@ body {
   }
 }
 
-/* Small screens (phones ≤767px) */
+/* Small screens (≤767px) */
 @media (max-width: 767.98px) {
   .section-title {
     margin-bottom: 40px;
@@ -171,7 +182,15 @@ body {
   }
 
   .single_address {
-    padding-left: 55px;
+    padding-left: 65px;
+  }
+
+  .single_address i {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    left: 8px;
   }
 
   .single_address h4 {
@@ -190,14 +209,14 @@ body {
   }
 
   .single_address {
-    padding-left: 50px;
+    padding-left: 55px;
   }
 
   .single_address i {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    font-size: 18px;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 16px;
   }
 
   .single_address h4 {
@@ -207,55 +226,48 @@ body {
   .single_address p {
     font-size: 13px;
   }
-
-  .map-container iframe {
-    height: 260px;
-  }
 }
 
-  /* Scroll Animation*/
-  .animate-on-scroll {
+/* =====================
+     SCROLL ANIMATION
+====================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+     ANIMATIONS
+====================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-
-  .animate-on-scroll.active {
+  100% {
+    transform: scale(1);
     opacity: 1;
-    transform: translateY(0);
   }
-
-  /* reponsive issues */
-    @media (max-width: 425px) {
-    .form-section{
-        font-size: 90%;
-    }
-    }
-    
-    /* ================= ANIMATIONS ================= */
-    .scroll-reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-in-out;
-    }
-
-    .scroll-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-    }
-
-    @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes popIn {
-    0% {
-        transform: scale(0.7);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    }
+}
