@@ -10,21 +10,21 @@ $(document).ready(function() {
   updateDateTime();
 
   // ===== Submenu toggle for mobile =====
-  $(".dropdown-submenu > a").on("click", function(e) {
-    if ($(window).width() < 992) {
-      e.preventDefault();
-      e.stopPropagation();
-      let submenu = $(this).next(".dropdown-menu");
-      $(".dropdown-submenu .dropdown-menu").not(submenu).removeClass("show");
-      submenu.toggleClass("show");
-    }
-  });
+    $(".dropdown-submenu > a").on("click", function(e) {
+      if ($(window).width() < 992) {
+        e.preventDefault();
+        e.stopPropagation();
+        let submenu = $(this).next(".dropdown-menu");
+        $(".dropdown-submenu .dropdown-menu").not(submenu).removeClass("show");
+        submenu.toggleClass("show");
+      }
+    });
 
-  $(".navbar-nav .nav-link").on("click", function() {
-    if (!$(this).hasClass("dropdown-toggle")) {
-      $(".navbar-collapse").collapse("hide");
-    }
-  });
+    $(".navbar-nav .nav-link").on("click", function() {
+      if (!$(this).hasClass("dropdown-toggle")) {
+        $(".navbar-collapse").collapse("hide");
+      }
+    });
 
   // ===== Custom Google Translate Dropdown =====
   const translateSelect = $("#language-select");
@@ -44,6 +44,20 @@ $(document).ready(function() {
     setTranslateLang(lang);
   });
 });
+
+    // Add active class on current page
+    $(document).ready(function () {
+        let currentPage = window.location.pathname.split("/").pop(); 
+
+        $(".navbar-nav a").each(function () {
+            let linkPage = $(this).attr("href");
+
+            if (linkPage === currentPage) {
+                $(this).addClass("active");
+                $(this).closest(".dropdown").find(".dropdown-toggle").addClass("active");
+            }
+        });
+    });
 
 // ===== Google Translate Initialization =====
 function googleTranslateElementInit() {

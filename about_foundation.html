@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Foundation</title>
-  <link rel="shortcut icon" href="./src/images/DMD_care_bd_Logo.webp" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/src/img/DMD_care_bd_Logo.webp" type="image/x-icon">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/about_foundation.css" />
+  <link rel="stylesheet" href="./assets/css/pages/about_foundation.css" />
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,11 +29,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
   <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
-
-  <!-- AOS for animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
 
 </head>
 
@@ -51,7 +47,7 @@
 
 <main class="container">
   <!-- About Section -->
-  <section class="row align-items-center gy-4 mb-5">
+  <section class="row align-items-center gy-4 mb-5 scroll-reveal">
     <article class="col-md-6">
       <h2 class="mb-3">We help children affected by Muscular Dystrophy</h2>
       <p>
@@ -108,20 +104,26 @@
   </section>
 
   <!-- Video Section -->
-  <section class="text-center mb-5">
+  <section class="text-center mb-5 scroll-reveal">
     <h3>Take A Vital Look At Our Application</h3>
     <p class="text-muted mb-3">By using the DMD Care Foundation platform, you agree to our Terms of Service.</p>
-    <div class="video-wrapper d-inline-block" role="button" tabindex="0" aria-label="Play Video">
-      <img
-        src="https://www.hopkinsmedicine.org/-/media/images/health/1_-conditions/genetic-disorders/duchenne-muscular-dystrophy-teaser.jpg"
-        alt="Video preview of DMD Care Foundation team"
-        class="img-fluid rounded"
-      />
+
+    <div class="video-wrapper d-inline-block">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/Xnu7fkCVdog?si=FgpWrZ-8ClhivZZD"
+        title="DMD Care Foundation video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        class="rounded"
+      ></iframe>
     </div>
   </section>
 
   <!-- Stats Section -->
-  <section class="stats-section d-flex flex-wrap justify-content-around text-center mb-5">
+  <section class="stats-section d-flex flex-wrap justify-content-around text-center mb-5 scroll-reveal">
     <div class="stat flex-fill mx-3">
         <div class="stat-number" data-target="100">0</div>
         <div class="stat-label fw-semibold">Children Documented</div>
@@ -142,7 +144,7 @@
 
 
   <!-- Info Blocks Section -->
-  <section class="mb-5">
+  <section class="mb-5 scroll-reveal">
     <div class="info-block">
       <div class="info-icon" aria-hidden="true">🎯</div>
       <div>
@@ -170,10 +172,8 @@
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/about_foundation.js"></script>
-
-<!-- link js for header & footer -->
-<script src="./js/script.js"></script> 
+<script src="./assets/js/script.js"></script>
+<script src="./assets/js/pages/about_foundation.js"></script>
 
 <!-- Dynamic Footer -->
 <div id="footer-container"></div>

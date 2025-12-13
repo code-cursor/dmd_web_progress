@@ -3,7 +3,7 @@ $(document).ready(function() {
   function startStatsAnimation() {
     setTimeout(function() {
       $('.stats-box').addClass('animated');
-    }, 1600); // 1.6s delay (depends on animate__fadeInLeft & Right duration)
+    }, 500); // .5s delay (depends on animate__fadeInLeft & Right duration)
   }
 
   // Trigger when visible in viewport
@@ -47,7 +47,7 @@ const observer = new IntersectionObserver(entries => {
       // Add delay (e.g., 1000ms = 1 second)
       setTimeout(() => {
         animateCountUp(entry.target);
-      }, 1000); // ← Change this number to adjust delay (in ms)
+      }, 500); // ← Change this number to adjust delay (in ms)
       
       observer.unobserve(entry.target); // Run once
     }

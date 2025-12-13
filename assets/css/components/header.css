@@ -159,6 +159,12 @@ select.custom-translate {
   transition: all 0.2s ease-in-out;
 }
 
+.dropdown-item.active, .dropdown-item:active {
+    color: white !important;
+    text-decoration: none;
+    background-color: var(--color-primary) !important;
+}
+
 /*buttons: adjust button size and spacing */
 .navbar .btn {
   font-weight: 600;

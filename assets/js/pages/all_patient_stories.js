@@ -4,7 +4,7 @@ const patients = [
     age: "Diagnosed at 12 years",
     year: "2022",
     status: "Wheelchair user",
-    photo: "./src/images/p_muntasir_billah.jpg",
+    photo: "./assets/src/img/p_muntasir_billah.jpg",
     link: "patient_story.html"
   },
   {
@@ -12,16 +12,16 @@ const patients = [
     age: "Diagnosed at 6 years",
     year: "2021",
     status: "Can walk with support",
-    photo: "./src/images/patients_2.jpg",
-    link: "patient-arif.html"
+    photo: "./assets/src/img/patients_2.jpg",
+    link: "patient_story.html"
   },
   {
     name: "Zihan Ahmed",
     age: "Diagnosed at 8 years",
     year: "2020",
     status: "Under physiotherapy care",
-    photo: "./src/images/patients_3.jpg",
-    link: "patient-zihan.html"
+    photo: "./assets/src/img/patients_3.jpg",
+    link: "patient_story.html"
   },
   {
     name: "Samiul Hasan",
@@ -29,7 +29,7 @@ const patients = [
     year: "2023",
     status: "Uses wheelchair",
     photo: "https://i.ibb.co/Dg7QyC5/child4.jpg",
-    link: "patient-samiul.html"
+    link: "patient_story.html"
   }
 ];
 

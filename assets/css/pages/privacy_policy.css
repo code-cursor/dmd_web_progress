@@ -16,7 +16,7 @@
 }
 
 /* =========================
-   Global Styles
+        Global Styles
 ========================= */
 * {
   font-family: 'Poppins', sans-serif;
@@ -26,7 +26,7 @@
 }
 
 body {
-  background: linear-gradient(to top, #ffffff, #cbffcb);
+  background: linear-gradient(#ffffff, #cbffcb);
   color: #333;
   line-height: 1.6;
 }
@@ -71,20 +71,20 @@ body {
 .privacy-container h2 {
   font-weight: 600;
   font-size: clamp(1.2rem, 2vw, 1.5rem); /* ✅ Responsive text */
-  color: #000;
+  color: #292828;
   margin-top: 1rem;
 }
 
 .privacy-container h3 {
   font-weight: 500;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: #333;
+  color: #636363;
 }
 
 .privacy-container p {
   text-align: justify;
   font-size: clamp(0.95rem, 1.3vw, 1.1rem); /* ✅ Responsive text */
-  color: #333;
+  color: #636363;
   margin-bottom: 1rem;
 }
 
